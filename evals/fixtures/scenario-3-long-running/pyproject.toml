@@ -1,0 +1,11 @@
+[project]
+name = "maintenance-platform"
+version = "0.12.0"
+requires-python = ">=3.14"
+dependencies = ["django==6.1.*", "django-allauth[mfa]==65.*", "procrastinate==3.*", "django-storages[s3]==1.14.*", "pillow-heif==1.*", "twilio==9.*", "stripe==12.*", "boto3==1.40.*", "sentry-sdk==2.*"]
+
+[dependency-groups]
+dev = ["pytest", "pytest-django", "ruff", "mypy", "django-stubs", "import-linter", "playwright", "axe-playwright-python"]
+
+[tool.importlinter]
+root_package = "apps"

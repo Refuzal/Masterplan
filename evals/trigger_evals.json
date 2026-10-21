@@ -1,0 +1,94 @@
+[
+ {
+  "query": "I want to build an app where dog groomers can take bookings online and send text reminders. I'm not technical. Where do I even start?",
+  "should_trigger": true
+ },
+ {
+  "query": "/masterplan",
+  "should_trigger": true
+ },
+ {
+  "query": "We're about to start a new SaaS for property managers - help me figure out the tech stack, hosting and architecture before we write any code",
+  "should_trigger": true
+ },
+ {
+  "query": "my partner and I want to build an internal tool for our 40 person accounting firm to chase clients for documents. we're thinking microservices on kubernetes. can you help us plan this out properly?",
+  "should_trigger": true
+ },
+ {
+  "query": "Plan a desktop app for field inspectors that has to work without internet, I'll be building it with Claude Code",
+  "should_trigger": true
+ },
+ {
+  "query": "I have an idea for a mobile app for my running club. before I start vibe coding it can you help me scope v1 and set up the project docs so the AI agent doesn't lose track",
+  "should_trigger": true
+ },
+ {
+  "query": "scope and architect an AI customer-support assistant product for small e-commerce shops, we have 3 months and 2 devs",
+  "should_trigger": true
+ },
+ {
+  "query": "We approved the plan last week but now the client wants offline support and payments. Can you update the architecture and decisions?",
+  "should_trigger": true
+ },
+ {
+  "query": "Add a dark mode toggle to the settings page of my React app",
+  "should_trigger": false
+ },
+ {
+  "query": "Fix the failing test in tests/test_billing.py - it says KeyError: 'customer_id'",
+  "should_trigger": false
+ },
+ {
+  "query": "Is Postgres or MySQL faster for analytics queries?",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a project plan for my kitchen remodel with a timeline and budget",
+  "should_trigger": false
+ },
+ {
+  "query": "Set up GitHub Actions to run pytest on every pull request in this repo",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain the difference between a monolith and microservices in simple terms",
+  "should_trigger": false
+ },
+ {
+  "query": "Help me write the marketing launch plan for our app on Product Hunt next month",
+  "should_trigger": false
+ },
+ {
+  "query": "Refactor this function to use async/await instead of callbacks",
+  "should_trigger": false
+ },
+ {
+  "query": "I run a 6-person marketing team. Plan a simple task tracker for us and then build it, I'm not a programmer",
+  "should_trigger": true
+ },
+ {
+  "query": "/masterplan build",
+  "should_trigger": true
+ },
+ {
+  "query": "we want to build a multi-tenant SaaS for dental clinics with appointment booking and billing, help me architect it and then build the first version",
+  "should_trigger": true
+ },
+ {
+  "query": "Fix the null pointer error in utils.py on line 42",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a Python function that parses a CSV file into a list of dicts",
+  "should_trigger": false
+ },
+ {
+  "query": "Add pagination to the /users endpoint in this Express app",
+  "should_trigger": false
+ },
+ {
+  "query": "Why does my React useEffect run twice in development?",
+  "should_trigger": false
+ }
+]

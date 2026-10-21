@@ -1,0 +1,10 @@
+name: ci
+on: [pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: uv sync --frozen
+      - run: uv run ruff check && uv run ruff format --check && uv run mypy . && uv run lint-imports
+      - run: uv run pytest

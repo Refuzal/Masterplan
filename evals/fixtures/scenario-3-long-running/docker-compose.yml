@@ -1,0 +1,6 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_PASSWORD: localdev
+    ports: ['5432:5432']

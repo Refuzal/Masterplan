@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: web
+    runtime: python
+    plan: standard
+    numInstances: 2
+  - type: worker
+    name: messages-worker
+  - type: worker
+    name: messages-worker-2
+  - type: worker
+    name: media-worker
+databases:
+  - name: main
+    plan: pro
+    highAvailability: true

@@ -1,0 +1,226 @@
+{
+  "skill_name": "masterplan",
+  "notes": "Interactive skill. Each eval is a live multi-turn conversation: a fresh executor agent runs the skill and ends its turn whenever it needs the user; the evaluator replies strictly in character from the persona in evals/personas.md. Evals 7 and 3 start from projects produced by earlier runs (see 'files'). Evals 9-11 (added in v2) test the build and fix phases: they need a machine that can install packages and run tests, and take one to three hours each.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "nontechnical-founder",
+      "prompt": "/masterplan I want to build an app for independent dog groomers. Their clients could book appointments online and get reminders so there are fewer no-shows. I'd sell it to groomers as a monthly subscription. I'm not a programmer, I'll be building it with AI tools.",
+      "expected_output": "Plain-English discovery that never forces technology choices, recognizes a multi-tenant subscription product, sets the Standard tier, presents one architecture package with costs, records delegated decisions, produces a Standard foundation that passes the checker, and stops at an authorization question.",
+      "files": [],
+      "expectations": [
+        "No question asks the user to choose a specific technology (framework, language, database, hosting provider) by name; technical choices arrive as recommendations to approve",
+        "Every multiple-choice question offers the exact option 'I'm not sure — what do you recommend?'",
+        "No assistant turn asks more than three questions",
+        "Identifies that each groomer business needs its own private data (multi-tenancy) and records a tenancy decision in an ADR",
+        "Sets the Standard tier and tells the user what that means",
+        "Presents the stack as one package that includes a monthly running-cost estimate and how hard each part is to change later",
+        "Treats SMS reminder cost and provider as an explicit part of the plan (cost line or ADR)",
+        "Decisions the user delegated are recorded in ADRs as delegated ('Decided by: Delegated', or 'Owner approved the recommended package (technical choices delegated)')",
+        "Roadmap has Milestone 0 (safe to build) and Milestone 1 (walking skeleton) with acceptance criteria and verification",
+        "check_foundation.py --phase ready reports no FAIL on the produced project",
+        "Ends by asking for explicit authorization to start building and writes no application code",
+        "Asks the user 20 or fewer questions in total",
+        "Stays within the question estimate it gives the user, or says in a line when and why it needs more",
+        "Any change the plan review makes to a cost, account or chore the user already approved is shown to the user as old → new",
+        "The services the owner must create accounts for are each justified by a requirement, with no two covering the same job"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "overengineered-proposal",
+      "prompt": "/masterplan We need an internal tool for our 40-person accounting firm to track client document requests: which documents we've asked clients for, what has come in, and what's overdue. I want it built right: microservices on Kubernetes, Kafka for events, MongoDB, and a separate React Native mobile app plus a web app. We'll host on AWS.",
+      "expected_output": "Respectful, evidence-based pushback on microservices, Kubernetes, Kafka, MongoDB and a separate mobile app for a 40-user tool, each with severity and the conditions under which it would be right; keeps AWS as a legitimate constraint; raises build-vs-buy; treats client financial documents as sensitive; records rejected options in ADRs.",
+      "files": [],
+      "expectations": [
+        "Challenges microservices/Kubernetes/Kafka as unjustified for this scale, labels the severity, and explains consequences in cost, time or complexity",
+        "Recommends a relational database instead of MongoDB for this relational data, with a reason",
+        "Challenges building a separate React Native app in version 1 and proposes a simpler option",
+        "Explains the conditions under which the user's original choices would make sense",
+        "Keeps AWS as the hosting constraint rather than arguing against it",
+        "Raises build-versus-buy (existing document-request or practice-management products) once without blocking progress",
+        "Treats client financial documents as sensitive: access control, encryption, audit logging and a justified tier",
+        "ADRs list the user's original choices among the options considered, with why they were not chosen",
+        "Final architecture is a single deployable (monolith or modular monolith) on managed AWS services",
+        "check_foundation.py --phase ready reports no FAIL on the produced project"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "long-running-cold-start",
+      "prompt": "You are a new AI coding agent joining this project. You have no other context. Using only the repository at the given path, answer: what are we building and for whom; why (success criteria); how is it structured; which decisions are binding; what is implemented; what remains; what exactly should you work on next and the first step; how do you validate a change. Cite the file each answer came from, then list anything missing, ambiguous or contradictory.",
+      "expected_output": "A fresh agent without the skill reconstructs the project's purpose, architecture, binding (non-superseded) decisions, progress, next task and validation commands correctly from a Masterplan foundation that has accumulated several milestones of work.",
+      "files": [
+        "fixture: built from eval 4's project with milestones M0–M2 marked done, a superseded ADR, feature specs and code stubs"
+      ],
+      "expectations": [
+        "Correctly states the product and its users",
+        "Correctly describes the main components and boundaries",
+        "Lists binding decisions and does not treat the superseded ADR as current",
+        "Correctly states which milestones are done",
+        "Identifies the same next task as state.md and a concrete first step",
+        "Gives the actual validation commands and definition of done",
+        "Cites a file for every answer",
+        "Reports no contradictions that are actually present in the docs (or, if it reports some, they are real)"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "multitenant-saas",
+      "prompt": "/masterplan I'm planning a B2B SaaS for property management companies: they manage buildings, renters, maintenance requests and vendor work orders. Pricing per building per month. We're hoping for thousands of customer companies eventually. There are two of us: I'm a product manager, and my co-founder is a backend developer who knows Python really well.",
+      "expected_output": "A Standard-tier plan that treats tenant isolation, sign-in and roles, enterprise SSO later, subscription billing, file storage for photos, background notifications, scaling path and costs explicitly; weighs the co-founder's Python fluency; runs an independent review.",
+      "files": [],
+      "expectations": [
+        "Records a tenancy-model ADR comparing at least two models (e.g. shared schema with tenant ID vs schema/database per tenant)",
+        "Makes cross-tenant isolation tests a CI gate or acceptance criterion",
+        "Defines roles and permissions (e.g. company admin, staff, renter, vendor) and where checks happen",
+        "Plans for enterprise single sign-on later without requiring a migration",
+        "Weighs the co-founder's Python fluency in the stack decision",
+        "Covers photo/file storage and background jobs for notifications",
+        "Includes subscription billing through a provider",
+        "Gives a cost estimate at launch and at the growth target, and a scaling path with triggers",
+        "Runs three independent reviewers that read only the docs, or explicitly labels a self-review fallback, and logs how findings were resolved",
+        "check_foundation.py --phase ready reports no FAIL on the produced project",
+        "Hosting and operations fit what the two founders can run themselves (a managed platform unless someone has run the proposed infrastructure)",
+        "The sign-in decision records a concrete extension point for per-company single sign-on",
+        "The monthly costs and retention periods shown to the user match the final documents",
+        "Sets Large scale and adds the operations and security documents it requires"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "offline-desktop-field-app",
+      "prompt": "/masterplan I want a tool for wildlife field researchers to record animal sightings (species, count, GPS location, photos, notes) on rugged laptops in remote areas with no internet for days at a time. Back at base they sync to the team's shared dataset and export CSV for analysis. Probably 30 researchers across 3 field stations.",
+      "expected_output": "A local-first desktop design with an embedded database and an explicit sync and conflict strategy; no web-only or always-online architecture; attention to sensitive location data, device loss, distribution and updates; low running cost.",
+      "files": [],
+      "expectations": [
+        "Recommends a local-first desktop application that works fully offline, not a web-only or always-online design",
+        "Uses an embedded local database and explains how data syncs when back online",
+        "Addresses sync conflicts explicitly (for example append-only records or a conflict rule)",
+        "Treats endangered-species locations as sensitive data (encryption on the laptop, access control, or export controls)",
+        "Plans for laptop loss or failure (backups or prompt sync) so field data is not lost",
+        "Covers installation, updates and code signing for the target platform",
+        "Keeps infrastructure and running cost proportionate to a grant-funded team",
+        "check_foundation.py --phase ready reports no FAIL on the produced project"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "uncertain-user",
+      "prompt": "/masterplan I have an idea for an app that helps people swap houseplants with their neighbors. I don't really know anything about tech.",
+      "expected_output": "Despite the user choosing 'I'm not sure' almost every time, the skill keeps making progress with narrower questions and concrete recommendations, records delegated decisions and assumptions, never re-asks, and reaches a complete, inexpensive plan.",
+      "files": [],
+      "expectations": [
+        "After each 'I'm not sure', the assistant gives a specific recommendation with a reason instead of repeating the question",
+        "Replaces at least one hard question with an easier, concrete one when information is critical",
+        "Never asks the same question twice",
+        "Reaches handoff with a complete plan and an authorization question",
+        "Delegated decisions are marked Delegated in ADRs, and assumptions are tagged [Assumption] with revisit triggers",
+        "Keeps the plan cheap and simple for a free side project (no native app-store apps or heavy infrastructure in version 1 unless justified)",
+        "Addresses safety or privacy of neighbors meeting and sharing location",
+        "Asks the user 15 or fewer questions in total",
+        "check_foundation.py --phase ready reports no FAIL on the produced project"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "changing-requirements",
+      "prompt": "/masterplan change Big news: a chain of 12 mobile grooming vans wants to pilot this, but their groomers work in rural areas with spotty signal, so the groomer side has to work offline. They also want card-on-file deposits so clients who don't show up get charged.",
+      "expected_output": "Classifies the change as material, runs the ripple map, explains migration implications and options, and after approval supersedes affected ADRs and rewrites affected docs coherently; checker still passes.",
+      "files": [
+        "fixture: the project produced by eval 1 (with skill)"
+      ],
+      "expectations": [
+        "Classifies the change as material and lists the affected requirements, ADRs, architecture sections, roadmap items, cost and risks",
+        "Offers options for offline support (e.g. offline-capable web app vs native app) with tradeoffs and a recommendation",
+        "Explains migration implications: sync and conflict handling for bookings, rework, cost and new risks",
+        "Handles deposits through a payment provider so card data never touches the app, and addresses no-show charging policy or consent",
+        "After approval, writes new ADRs whose 'Supersedes' line names the old ADR, and the old ADR's status becomes 'Superseded by ADR-NNNN'",
+        "No document still describes the old design as current (architecture.md, AGENTS.md stack line, roadmap and state are updated)",
+        "Asks only the clarifying questions needed for the change",
+        "check_foundation.py --phase ready reports no FAIL after the change"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "tiny-book-club-app",
+      "prompt": "/masterplan I want a little web page for my book club (8 people) where we can vote on the next book and see the meeting schedule. Should cost nothing or close to it.",
+      "expected_output": "Light tier, very few questions, an honest build-vs-buy note, a free or near-free simple setup, the Light file set (four core files plus two to four short ADRs), a self-review instead of a reviewer panel, and no enterprise controls.",
+      "files": [],
+      "expectations": [
+        "Sets the Light tier",
+        "Asks the user 8 or fewer questions in total",
+        "Mentions that an existing free tool could do this, without refusing to plan the custom build",
+        "Recommends a free or near-free, single-deployable setup with no microservices, Kubernetes, queues or separate API service",
+        "Uses a self-review rather than spawning a three-reviewer panel",
+        "Produces the Light file set (four core files plus two to four short ADRs) with a short AGENTS.md",
+        "Does not add enterprise controls (SSO, audit logs, staging environments, on-call) to the plan",
+        "check_foundation.py --phase ready reports no FAIL on the produced project"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "task-tracker-plan-and-build",
+      "prompt": "/masterplan I run a 6-person marketing team and we keep losing track of who's doing what. I want a simple task tracker: tasks with an owner, a due date and a status, and a board we can all see. I'm not a programmer; I'll use Claude Code. Plan it and then build it.",
+      "expected_output": "Light tier plan in a few questions, then an authorized build: a milestone plan per milestone, test-first tasks, an independent review, fresh verification evidence, and a demo at each milestone, ending in a small, organized, tested app that runs locally.",
+      "files": [],
+      "expectations": [
+        "Plans at the Light tier and asks 6 or fewer questions before the setup proposal",
+        "Does not write application code before the owner's explicit authorization, and records the authorization in state.md",
+        "Writes an implementation plan for each milestone in docs/plans/ with global constraints, review focus, and tasks that name test seams and commands",
+        "Shows test-first evidence: tests were run and seen failing before the code that made them pass (in the ledger, reports or commit history)",
+        "Has the work reviewed by a fresh agent (per task or per milestone) and fixes or rules on the findings",
+        "Code is organized by feature with a shared platform folder, and a boundary rule is enforced by a lint or test step",
+        "External services, if any, sit behind adapters with test fakes; no test mocks the project's own modules",
+        "At the end, a fresh run of the full test suite, lint and typecheck passes, and the app starts with the documented command",
+        "Each milestone ends with a plain-language report: what works, exactly how to try it, verification evidence, and a request to accept and continue",
+        "state.md, the roadmap and AGENTS.md commands are up to date at the end",
+        "check_foundation.py --phase building reports no FAIL",
+        "Delivers a plain-language README.md the owner can follow to install, start and stop the app",
+        "Each milestone's acceptance criteria have acceptance tests committed before the tasks that satisfy them, and implementers did not edit them"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "multitenant-walking-skeleton-build",
+      "prompt": "/masterplan build",
+      "expected_output": "Starting from an approved Standard-tier multi-tenant plan, builds Milestone 0 and Milestone 1 locally: tenant isolation enforced in the app and the database and proven by tests, boundaries enforced by tooling, external services behind fakes, owner tasks listed for the accounts it cannot create, per-task reviews, and a milestone report with evidence.",
+      "files": [
+        "fixtures/scenario-10-approved-multitenant-plan/"
+      ],
+      "expectations": [
+        "Checks the build authorization before writing code and builds only the authorized milestones",
+        "Creates a milestone branch or worktree and checks for a green baseline first",
+        "Writes docs/plans/ plans for M0 and M1 before coding, with tasks sized for one fresh agent each",
+        "Every tenant-owned table and endpoint built has a test proving one company cannot read or change another's data, and the database enforces isolation as a second lock where the plan calls for it",
+        "Module boundaries from the architecture are enforced by a tool (for example import-linter) and the check runs in the project's test or lint command",
+        "Accounts and services it cannot create (hosting, texting, payments) are replaced by local fakes behind adapters, and listed as plain owner tasks",
+        "Each task gets an independent review with separate spec and standards verdicts, and the fix loop is recorded in the ledger",
+        "No claim of passing tests without the command output in the report or ledger",
+        "Ends the milestone with a report the owner can act on and asks to accept before continuing",
+        "check_foundation.py --phase building reports no FAIL",
+        "Each milestone's acceptance criteria have acceptance tests committed before the tasks that satisfy them, and implementers did not edit them"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "systematic-bug-fix",
+      "prompt": "/masterplan fix When I move a task to Done and then filter the board by owner, the task disappears completely — it doesn't show in Done either.",
+      "expected_output": "Reproduces the bug with a failing check before changing code, ranks hypotheses, fixes the root cause with a regression test at the right seam, cleans up instrumentation, and reports the cause, fix and evidence.",
+      "files": [
+        "a project built in eval 9, with a bug introduced on purpose"
+      ],
+      "expectations": [
+        "Builds a command or test that reproduces the exact symptom before changing production code",
+        "States ranked, testable hypotheses or a clear root-cause trace before the fix",
+        "Adds a regression test that fails before the fix and passes after it",
+        "Fixes the root cause rather than masking the symptom, with no unrelated changes",
+        "Removes temporary debugging code and runs the full suite before claiming the fix",
+        "Reports the root cause, the fix and the evidence in plain words, and updates state.md",
+        "Every new regression test fails when the production fix is reverted (verify by reverting it)",
+        "Reproduces on a throwaway copy of the data and keeps the unreviewed fix off the copy the owner runs until it is verified and integration is approved",
+        "The report tells the owner, in plain words, how to see that the bug is fixed and what, if anything, they need to do"
+      ]
+    }
+  ]
+}

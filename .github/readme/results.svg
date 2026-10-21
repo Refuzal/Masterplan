@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-label="Test results: planning a booking app, Claude alone needed 21 questions and passed 1 of 12 checks, Masterplan needed 8 and passed 12; building a task tracker, Masterplan scored 5, 5, 5 and 4 out of 5 on organisation, test quality, correctness and owner experience against Superpowers' 3, 4, 4 and 3">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0b2f6e"/><stop offset="1" stop-color="#0f4597"/>
+  </linearGradient>
+  <pattern id="minor" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  </pattern>
+  <pattern id="major" width="100" height="100" patternUnits="userSpaceOnUse">
+    <path d="M100 0H0V100" fill="none" stroke="#ffffff" stroke-opacity="0.13" stroke-width="1"/>
+  </pattern>
+  <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#9ec3f0" stroke-opacity="0.55" stroke-width="2"/>
+  </pattern>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0L10 5L0 10z" fill="#9ec3f0"/>
+  </marker>
+  <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <path d="M2 8L8 2" stroke="#9ec3f0" stroke-width="1.5"/>
+  </marker>
+</defs>
+<style>
+  .t{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#eaf3ff}
+  .m{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;fill:#9ec3f0}
+  .mi{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;fill:#eaf3ff}
+  .ln{stroke:#eaf3ff;fill:none;stroke-width:2}
+  .lt{stroke:#9ec3f0;fill:none;stroke-width:1.2}
+  .dash{stroke:#9ec3f0;fill:none;stroke-width:1.2;stroke-dasharray:6 5}
+</style>
+<rect width="1200" height="440" rx="14" fill="url(#bg)"/>
+<rect width="1200" height="440" rx="14" fill="url(#minor)"/>
+<rect width="1200" height="440" rx="14" fill="url(#major)"/>
+<rect x="14" y="14" width="1172" height="412" rx="8" fill="none" stroke="#eaf3ff" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="20" y="20" width="1160" height="400" rx="5" fill="none" stroke="#eaf3ff" stroke-opacity="0.25" stroke-width="1"/>
+<text x="56" y="70" class="m" font-size="13" letter-spacing="3">TEST RESULTS</text>
+<text x="80" y="118" class="t" font-size="20" font-weight="700">Planning a booking app</text>
+<text x="80" y="140" class="m" font-size="12">non-technical founder · Claude alone vs with Masterplan</text>
+<text x="80" y="186" class="m" font-size="12" letter-spacing="1">QUESTIONS YOU ANSWER</text>
+<rect x="230" y="198" width="273" height="26" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1.2"/>
+<text x="218" y="216" class="mi" font-size="13" text-anchor="end">no skill</text>
+<text x="513" y="216" class="mi" font-size="14" font-weight="700">21</text>
+<rect x="230" y="232" width="104" height="26" rx="3" fill="#7fd8ff"/>
+<text x="218" y="250" class="mi" font-size="13" text-anchor="end">Masterplan</text>
+<text x="344" y="250" class="mi" font-size="14" font-weight="700">8</text>
+<text x="80" y="296" class="m" font-size="12" letter-spacing="1">PLAN CHECKS PASSED (OF 12)</text>
+<rect x="230" y="308" width="23" height="26" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1.2"/>
+<text x="218" y="326" class="mi" font-size="13" text-anchor="end">no skill</text>
+<text x="263" y="326" class="mi" font-size="14" font-weight="700">1</text>
+<rect x="230" y="342" width="276" height="26" rx="3" fill="#7fd8ff"/>
+<text x="218" y="360" class="mi" font-size="13" text-anchor="end">Masterplan</text>
+<text x="516" y="360" class="mi" font-size="14" font-weight="700">12</text>
+<line x1="600" y1="100" x2="600" y2="400" class="dash"/>
+<text x="640" y="118" class="t" font-size="20" font-weight="700">Building a task tracker</text>
+<text x="640" y="140" class="m" font-size="12">same app, built two ways · graded 1–5 · Superpowers vs Masterplan</text>
+<text x="798" y="194" class="mi" font-size="13" text-anchor="end">organisation</text>
+<rect x="810" y="172" width="320" height="18" rx="3" fill="#7fd8ff"/>
+<text x="1138" y="186" class="mi" font-size="13" font-weight="700">5</text>
+<rect x="810" y="194" width="192" height="14" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1"/>
+<text x="1010" y="206" class="m" font-size="12">3</text>
+<text x="798" y="250" class="mi" font-size="13" text-anchor="end">test quality</text>
+<rect x="810" y="228" width="320" height="18" rx="3" fill="#7fd8ff"/>
+<text x="1138" y="242" class="mi" font-size="13" font-weight="700">5</text>
+<rect x="810" y="250" width="256" height="14" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1"/>
+<text x="1074" y="262" class="m" font-size="12">4</text>
+<text x="798" y="306" class="mi" font-size="13" text-anchor="end">correctness</text>
+<rect x="810" y="284" width="320" height="18" rx="3" fill="#7fd8ff"/>
+<text x="1138" y="298" class="mi" font-size="13" font-weight="700">5</text>
+<rect x="810" y="306" width="256" height="14" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1"/>
+<text x="1074" y="318" class="m" font-size="12">4</text>
+<text x="798" y="362" class="mi" font-size="13" text-anchor="end">owner experience</text>
+<rect x="810" y="340" width="256" height="18" rx="3" fill="#7fd8ff"/>
+<text x="1074" y="354" class="mi" font-size="13" font-weight="700">4</text>
+<rect x="810" y="362" width="192" height="14" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1"/>
+<text x="1010" y="374" class="m" font-size="12">3</text>
+<rect x="80" y="392" width="18" height="12" rx="2" fill="#7fd8ff"/><text x="106" y="403" class="mi" font-size="12">Masterplan</text>
+<rect x="220" y="392" width="18" height="12" rx="2" fill="url(#hatch)" stroke="#9ec3f0"/><text x="246" y="403" class="m" font-size="12">comparison</text>
+<text x="1120" y="403" class="m" font-size="11" text-anchor="end">single runs, simulated users, model graders · full data in RESULTS.md</text>
+</svg>

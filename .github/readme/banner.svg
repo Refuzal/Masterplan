@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-label="Masterplan: plan and build software like an experienced engineering team. Banner drawn as a blueprint of a SaaS system: browser and phone clients, an app split into feature modules over a shared platform, a Postgres database with per-tenant row-level security, a job queue and workers behind provider adapters, and a pipeline of tests first, review, verify and demo.">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a2c68"/><stop offset="1" stop-color="#0f4597"/></linearGradient>
+  <pattern id="minor" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#fff" stroke-opacity="0.06"/></pattern>
+  <pattern id="major" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" fill="none" stroke="#fff" stroke-opacity="0.12"/></pattern>
+  <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#9ec3f0" stroke-opacity="0.5" stroke-width="2"/></pattern>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9ec3f0"/></marker>
+</defs>
+<style>.t{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#eaf3ff} .m{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;fill:#9ec3f0} .mi{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;fill:#eaf3ff}</style>
+<rect width="1280" height="440" rx="14" fill="url(#bg)"/>
+<rect width="1280" height="440" rx="14" fill="url(#minor)"/>
+<rect width="1280" height="440" rx="14" fill="url(#major)"/>
+<rect x="14" y="14" width="1252" height="412" rx="8" fill="none" stroke="#eaf3ff" stroke-opacity="0.5" stroke-width="1.5"/>
+<text x="64" y="92" class="m" font-size="12" letter-spacing="3">SHEET A-01 · SAAS SYSTEM PLAN</text>
+<text x="60" y="162" class="t" font-size="70" font-weight="800" textLength="430" lengthAdjust="spacingAndGlyphs">MASTERPLAN</text>
+<line x1="64" y1="184" x2="494" y2="184" stroke="#7fd8ff" stroke-width="3"/>
+<text x="64" y="222" class="t" font-size="21">Plan and build software like an</text>
+<text x="64" y="250" class="t" font-size="21">experienced engineering team.</text>
+<text x="64" y="288" class="m" font-size="12.5">A skill for Claude. From a weekend tool</text>
+<text x="64" y="306" class="m" font-size="12.5">to a multi-tenant SaaS.</text>
+<rect x="64" y="336" width="430" height="58" fill="#ffffff" fill-opacity="0.04" stroke="#eaf3ff" stroke-opacity="0.7" stroke-width="1.2"/>
+<text x="74" y="356" class="m" font-size="9.5" letter-spacing="1.5">PROJECT</text>
+<text x="74" y="378" class="mi" font-size="12">YOUR SAAS</text>
+<line x1="204" y1="336" x2="204" y2="394" stroke="#eaf3ff" stroke-opacity="0.5"/>
+<text x="214" y="356" class="m" font-size="9.5" letter-spacing="1.5">REV</text>
+<text x="214" y="378" class="mi" font-size="12">2.0</text>
+<line x1="274" y1="336" x2="274" y2="394" stroke="#eaf3ff" stroke-opacity="0.5"/>
+<text x="284" y="356" class="m" font-size="9.5" letter-spacing="1.5">CHECKED</text>
+<text x="284" y="378" class="mi" font-size="12">INDEPENDENT REVIEW</text>
+<rect x="544" y="56" width="680" height="338" rx="6" fill="none" stroke="#eaf3ff" stroke-opacity="0.25" stroke-dasharray="2 6"/>
+<text x="560" y="76" class="m" font-size="10" fill="#9ec3f0" text-anchor="start" letter-spacing="1">SYSTEM · ONE CODEBASE, MANY CUSTOMERS</text>
+<rect x="564" y="100" width="112" height="44" rx="4" fill="#ffffff" fill-opacity="0.06" stroke="#eaf3ff" stroke-width="1.8"/>
+<path d="M572 100 H564 V108" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M668 100 H676 V108" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M572 144 H564 V136" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M668 144 H676 V136" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<text x="620.0" y="118.0" class="mi" font-size="13" text-anchor="middle" font-weight="700">Browser</text>
+<text x="620.0" y="135.0" class="m" font-size="10.5" text-anchor="middle">staff</text>
+<rect x="564" y="160" width="112" height="44" rx="4" fill="#ffffff" fill-opacity="0.06" stroke="#eaf3ff" stroke-width="1.8"/>
+<path d="M572 160 H564 V168" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M668 160 H676 V168" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M572 204 H564 V196" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M668 204 H676 V196" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<text x="620.0" y="178.0" class="mi" font-size="13" text-anchor="middle" font-weight="700">Phone</text>
+<text x="620.0" y="195.0" class="m" font-size="10.5" text-anchor="middle">customers</text>
+<rect x="730" y="92" width="250" height="120" rx="4" fill="#ffffff" fill-opacity="0.04" stroke="#eaf3ff" stroke-width="1.8"/>
+<path d="M738 92 H730 V100" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M972 92 H980 V100" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M738 212 H730 V204" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M972 212 H980 V204" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<text x="855.0" y="152.0" class="mi" font-size="13" text-anchor="middle" font-weight="700"></text>
+<text x="744" y="112" class="m" font-size="10" fill="#eaf3ff" text-anchor="start" letter-spacing="1">APP · FEATURES</text>
+<rect x="744" y="124" width="68" height="34" rx="3" fill="#7fd8ff" fill-opacity="0.12" stroke="#9ec3f0" stroke-width="1.2"/>
+<text x="778" y="146" class="mi" font-size="10.5" text-anchor="middle">bookings</text>
+<rect x="822" y="124" width="68" height="34" rx="3" fill="#7fd8ff" fill-opacity="0.12" stroke="#9ec3f0" stroke-width="1.2"/>
+<text x="856" y="146" class="mi" font-size="10.5" text-anchor="middle">billing</text>
+<rect x="900" y="124" width="68" height="34" rx="3" fill="#7fd8ff" fill-opacity="0.12" stroke="#9ec3f0" stroke-width="1.2"/>
+<text x="934" y="146" class="mi" font-size="10.5" text-anchor="middle">accounts</text>
+<line x1="817" y1="120" x2="817" y2="162" stroke="#ffc857" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="895" y1="120" x2="895" y2="162" stroke="#ffc857" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="744" y="170" width="224" height="30" rx="3" fill="url(#hatch)" stroke="#9ec3f0" stroke-width="1.2"/>
+<rect x="796" y="176" width="120" height="18" fill="#0e4290"/>
+<text x="856" y="189" class="mi" font-size="10.5" text-anchor="middle">platform · auth</text>
+<path d="M676 122 H728" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M676 182 H710 V160 H728" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M1060 106 a70 14 0 0 1 140 0 v100 a70 14 0 0 1 -140 0 z" fill="#ffffff" fill-opacity="0.05" stroke="#eaf3ff" stroke-width="1.8"/>
+<path d="M1060 106 a70 14 0 0 0 140 0" fill="none" stroke="#eaf3ff" stroke-width="1.8"/>
+<text x="1130" y="144" class="mi" font-size="12" text-anchor="middle" font-weight="700">Postgres</text>
+<rect x="1078" y="154" width="104" height="13" rx="2" fill="#7fd8ff" fill-opacity="0.35"/>
+<text x="1130" y="164" class="mi" font-size="9.5" text-anchor="middle">tenant A</text>
+<rect x="1078" y="172" width="104" height="13" rx="2" fill="#7fd8ff" fill-opacity="0.26999999999999996"/>
+<text x="1130" y="182" class="mi" font-size="9.5" text-anchor="middle">tenant B</text>
+<rect x="1078" y="190" width="104" height="13" rx="2" fill="#7fd8ff" fill-opacity="0.18999999999999997"/>
+<text x="1130" y="200" class="mi" font-size="9.5" text-anchor="middle">tenant C</text>
+<rect x="1202" y="160" width="18" height="14" rx="2" fill="#ffc857"/>
+<path d="M1206 160 v-4 a5 5 0 0 1 10 0 v4" fill="none" stroke="#ffc857" stroke-width="2"/>
+<path d="M980 150 H1056" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="1130" y="234" class="m" font-size="9.5" fill="#ffc857" text-anchor="middle" letter-spacing="1">ROW-LEVEL SECURITY</text>
+<rect x="730" y="250" width="118" height="46" rx="4" fill="#ffffff" fill-opacity="0.06" stroke="#eaf3ff" stroke-width="1.8"/>
+<path d="M738 250 H730 V258" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M840 250 H848 V258" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M738 296 H730 V288" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M840 296 H848 V288" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<text x="789.0" y="269.0" class="mi" font-size="13" text-anchor="middle" font-weight="700">Job queue</text>
+<text x="789.0" y="286.0" class="m" font-size="10.5" text-anchor="middle">outbox · retries</text>
+<rect x="862" y="250" width="118" height="46" rx="4" fill="#ffffff" fill-opacity="0.06" stroke="#eaf3ff" stroke-width="1.8"/>
+<path d="M870 250 H862 V258" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M972 250 H980 V258" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M870 296 H862 V288" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M972 296 H980 V288" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<text x="921.0" y="269.0" class="mi" font-size="13" text-anchor="middle" font-weight="700">Workers</text>
+<text x="921.0" y="286.0" class="m" font-size="10.5" text-anchor="middle">email · texts</text>
+<path d="M789 212 V248" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M848 273 H860" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="1060" y="250" width="140" height="46" rx="4" fill="#ffffff" fill-opacity="0.06" stroke="#eaf3ff" stroke-width="1.8" stroke-dasharray="6 5"/>
+<path d="M1068 250 H1060 V258" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M1192 250 H1200 V258" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M1068 296 H1060 V288" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<path d="M1192 296 H1200 V288" stroke="#eaf3ff" stroke-width="2.6" fill="none"/>
+<text x="1130.0" y="269.0" class="mi" font-size="13" text-anchor="middle" font-weight="700">Providers</text>
+<text x="1130.0" y="286.0" class="m" font-size="10.5" text-anchor="middle">behind adapters</text>
+<path d="M980 273 H1058" fill="none" stroke="#9ec3f0" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<text x="560" y="328" class="m" font-size="10" fill="#9ec3f0" text-anchor="start" letter-spacing="1">EVERY CHANGE</text>
+<rect x="560" y="340" width="120" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#7fd8ff" stroke-width="1.5"/>
+<text x="620.0" y="359" class="mi" font-size="11" text-anchor="middle" >tests first</text>
+<path d="M682 355 H706" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="710" y="340" width="120" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#7fd8ff" stroke-width="1.5"/>
+<text x="770.0" y="359" class="mi" font-size="11" text-anchor="middle" >review</text>
+<path d="M832 355 H856" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="860" y="340" width="120" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#7fd8ff" stroke-width="1.5"/>
+<text x="920.0" y="359" class="mi" font-size="11" text-anchor="middle" >verify</text>
+<path d="M982 355 H1006" fill="none" stroke="#9ec3f0" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="1010" y="340" width="120" height="30" rx="15" fill="#7fd8ff" fill-opacity="0.9" stroke="#7fd8ff" stroke-width="1.5"/>
+<text x="1070.0" y="359" class="mi" font-size="11" text-anchor="middle" fill="#0b2f6e" font-weight="700">demo</text>
+</svg>
