@@ -1,8 +1,8 @@
 <p align="center">
-  <img alt="Masterplan banner, drawn as a blueprint of a SaaS system" src=".github/readme/banner.svg" width="100%">
+  <img alt="Masterplan, a Claude Code skill for planning and building apps and SaaS products, drawn as a blueprint of a SaaS system" src=".github/readme/banner.svg" width="100%">
 </p>
 
-Masterplan is a skill for Claude that plans and builds software the way a good engineering team would. You describe the app. It asks a few questions in plain English, writes a plan you can check, then builds it one milestone at a time. You see each milestone running before it moves on.
+Masterplan is an agent skill for Claude Code that plans and builds apps and SaaS products the way a good engineering team would. You describe the app. It asks a few questions in plain English, writes a plan you can check, then builds it one milestone at a time. You see each milestone running before it moves on.
 
 I made it because AI coding tools are quick to write code and slow to ask who it's for or what it'll cost to run. Masterplan does that part first.
 
