@@ -2,9 +2,9 @@
   <img alt="Masterplan, a Claude Code skill for planning and building apps and SaaS products, drawn as a blueprint of a SaaS system" src=".github/readme/banner.svg" width="100%">
 </p>
 
-Masterplan is an agent skill for Claude Code that plans and builds apps and SaaS products the way a good engineering team would. You describe the app. It asks a few questions in plain English, writes a plan you can check, then builds it one milestone at a time. You see each milestone running before it moves on.
+Masterplan is one of the best and most efficient agent skills for Claude Code that plans and builds apps and SaaS products the way a good engineering team would. You describe the app. It asks a few questions in plain English, writes a plan you can check, then builds it one milestone at a time. You see each milestone running before it moves on, and ensure your code is maintainable, organized, and scalable. 
 
-I made it because AI coding tools are quick to write code and slow to ask who it's for or what it'll cost to run. Masterplan does that part first.
+I made it because other popular skills didn't quite do exactly what I wanted it to do, and I wanted to ensure that I was laying a foundation to build off of that was scalable, maintainable, and did not require refactoring later. I have been vibe-coding for the past 2 years almost every day and this skill has helped me out tremendously. I hope you all find some value in it. 
 
 ## How it works
 
